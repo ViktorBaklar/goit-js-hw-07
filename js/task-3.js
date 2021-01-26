@@ -15,3 +15,14 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
+
+const gallery = document.querySelector('#gallery');
+
+const getImageList = image => {
+  gallery.insertAdjacentHTML(
+    "afterbegin",
+    `<li><img src = ${image.url} alt = '${image.alt}'></li>`
+  );
+};
+
+const imageList = images.map(image => getImageList(image));
